@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:p="http://primefaces.org/ui">
+ <h:head></h:head>
+ <h:body>
+ 	<h:form id="guess_form">
+ 	
+ 	<p:outputLabel value="#{guessBean.adivinar}" style="display:none;">
+ 	</p:outputLabel>
+ 	<p:outputLabel>Ingrese su numero:  </p:outputLabel>
+ 	<br></br>
+ 	<br></br>
+ 	<p:inputText value="#{guessBean.cont}"  >
+ 	</p:inputText>
+ 	<p:commandButton value="envio de adivinanza"  update="guess_form"  actionListener="#{guessBean.guess}">
+ 	</p:commandButton>
+ 	<br></br>
+ 	<br></br>
+ 	<br></br>
+ 	
+ 	<p:outputLabel>Numero ingresado:  </p:outputLabel>
+ 	 <p:outputLabel value="#{guessBean.cont}">
+ 	</p:outputLabel>
+ 	<br></br>
+ 	
+ 	<p:outputLabel>Numero intentos: </p:outputLabel>
+ 	<p:outputLabel value="#{guessBean.intentos}">
+ 	</p:outputLabel>
+ 	<br />
+ 	
+ 	
+ 
+ 	<p:outputLabel>Estado del juego: </p:outputLabel>
+ 	<p:outputLabel value="#{guessBean.estado}">
+ 	</p:outputLabel>
+ 	<br></br>
+    <p:outputLabel>Premio: </p:outputLabel>
+ 	<p:outputLabel value="#{guessBean.premio}">
+ 	</p:outputLabel>
+ 	<br></br>
+ 	<br></br>
+ 	
+ 	
+ 	<p:commandButton value="reiniciar juego "  update="guess_form"  actionListener="#{guessBean.restart}">
+ 	</p:commandButton>
+ 	<br></br>
+ 	<br></br>
+ 	<p:outputLabel>Intentos </p:outputLabel>
+ 	<h:dataTable value="#{guessBean.misIntentos}" var="s">
+  <h:column>${s}</h:column>
+  </h:dataTable>
+ 	</h:form>
+ 	
+ </h:body>
+</html>
